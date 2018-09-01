@@ -8,7 +8,17 @@
     "build": "tsc",
     "build:watch": "tsc -w",
     "lint": "tslint -c tslint.json src/**",
-    "start-dev": "npm-run-all --parallel build:watch assets:start-dev"
+    "start": "node build/app.js",
+    "start-dev": "npm-run-all --parallel build:watch assets:start",
+    "assets:start-dev": "nodemon -e ts -L build/app.js"
+  },
+  "nodemonConfig": {
+    "legacyWatch": true,
+    "watch": "src",
+    "ext": "ts",
+    "execMap": {
+      "ts": "ts-node"
+    }
   },
   "repository": {
     "type": "git",
@@ -23,11 +33,13 @@
   "dependencies": {
     "cheerio": "^1.0.0-rc.2",
     "clui": "^0.3.6",
+    "es6-promisify": "~5.0.0",
     "fs-path": "0.0.24",
     "inquirer": "^6.2.0",
-    "es6-promisify": "~5.0.0"
+    "nodemon": "^1.18.4"
   },
   "devDependencies": {
+    "npm-run-all": "^4.1.3",
     "ts-node": "^7.0.1",
     "tslint": "^5.11.0",
     "typescript": "^3.0.3"
