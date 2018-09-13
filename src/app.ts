@@ -1,14 +1,17 @@
-import * as fs from 'fs';
-import * as fsPath from 'fs-path';
-import { dofusService } from './services/dofus.service';
-import * as cm from './cli-view/cmd';
-import { asciiHelper } from './helpers/asciHelper';
+import * as request from 'request-promise-native';
 
+const url = 'https://en.wikipedia.org/wiki/List_of_Presidents_of_the_United_States';
 
 // starting up scrapper
 async function init(): Promise<void> {
+    const options: any = {
+        uri: url,
+            method: 'GET'
+    };
+    const html = await request.get(options);
 
-    asciiHelper.asciiArt();
 
 }
+
+init();
 
