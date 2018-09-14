@@ -9,6 +9,9 @@ export class dofusEncyclopedie {
     }
 
     public execute(): void {
-        
+
+        // on parcours tous les dossier de encyclopedie
+        //TODO
+        // On parcours tous les fichiers exemple de equipements   
     }
 }
