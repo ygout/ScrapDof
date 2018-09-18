@@ -8,16 +8,19 @@ var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, ge
     });
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-const request = require("request-promise-native");
-const url = 'https://en.wikipedia.org/wiki/List_of_Presidents_of_the_United_States';
+// import * as request from 'request-promise-native';
+const encyclopedie_1 = require("./dofus/scrapers/encyclopedie");
+// const url = 'https://en.wikipedia.org/wiki/List_of_Presidents_of_the_United_States';
 // starting up scrapper
 function init() {
     return __awaiter(this, void 0, void 0, function* () {
-        const options = {
-            uri: url,
-            method: 'GET'
-        };
-        const html = yield request.get(options);
+        // const options: any = {
+        //     uri: url,
+        //         method: 'GET'
+        // };
+        // const html = await request.get(options);
+        let dofus = new encyclopedie_1.DofusEncyclopedie();
+        dofus.execute();
     });
 }
 init();
