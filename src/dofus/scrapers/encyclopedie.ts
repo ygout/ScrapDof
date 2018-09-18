@@ -24,7 +24,7 @@ export class DofusEncyclopedie {
             // lecture des sous répertoire
             let files: any = await fsPromise.readdir('./src/dofus/parser/' + currentFileName + '/' + dir);
             // load module dynamcly
-            let mymodule: any = await import('./src/dofus/parser/' + currentFileName + '/' + dir + '/' + files[0]);
+            let mymodule: any = require('./src/dofus/parser/' + currentFileName + '/' + dir + '/' + files[0]);
             
             console.log(mymodule);
         }

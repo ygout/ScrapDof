@@ -28,7 +28,7 @@ class DofusEncyclopedie {
                 // lecture des sous répertoire
                 let files = yield fs_promise_1.fsPromise.readdir('./src/dofus/parser/' + currentFileName + '/' + dir);
                 // load module dynamcly
-                let mymodule = yield Promise.resolve().then(() => require('./src/dofus/parser/' + currentFileName + '/' + dir + '/' + files[0]));
+                let mymodule = require('./src/dofus/parser/' + currentFileName + '/' + dir + '/' + files[0]);
                 console.log(mymodule);
             }
             // On parcours tous les fichiers exemple de equipements
