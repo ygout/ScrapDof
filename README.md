@@ -1,6 +1,6 @@
 # Scraper Dofus
 
-Scraper for create an api about Dofus games
+Scraper for create an api about Dofus games (encyclopedia)
 
 
 
